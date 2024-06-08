@@ -1,0 +1,45 @@
+.annotation__variable {
+	border: solid 1px rgba(0, 233, 35, 1);
+	border-radius: 100px;
+	background-color:rgba(0, 255, 38, 0.8);
+	cursor: pointer;
+	font-size: 11px;
+	font-weight: 600;
+	padding: 2px 8px 3px 4px;
+	transition: all 0.25s ease-in-out;
+	line-height: 1;
+	display: inline-block;
+}
+
+.annotation__variable:hover {
+	background-color:rgba(0, 255, 38, 1);
+	border-color:rgba(0, 0, 0, 1);
+}
+
+.annotation svg {
+	mix-blend-mode: multiply;
+}
+
+.annotation span {
+	background-color: transparent;
+	border-bottom: none;
+	color: #000000;
+}
+
+.annotation__variable [aria-label="Annotation object"] {
+	transition: all 0.25s ease-in-out;
+	display: inline-block;
+}
+
+.annotation__variable svg {
+	transition: all 0.25s ease-in-out;
+	display: inline-block;
+	transform-origin: center center;
+}
+
+.annotation__variable:hover [aria-label="Annotation object"] {
+	transform: translateX(-2px);
+}
+.annotation__variable:hover svg {
+	transform: scale(0.75) translateY(1px) !important;
+}

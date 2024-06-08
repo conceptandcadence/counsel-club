@@ -1,13 +1,13 @@
 import type { PortableTextBlock, Slug, ImageAsset } from "@sanity/types";
 
 
-export interface Post {
+export interface Contract {
   _id: string;
-  _type: "post";
+  _type: "contract";
   _createdAt: string;
   title?: string;
   slug: Slug;
-  excerpt?: string;
   mainImage?: ImageAsset;
-  body: PortableTextBlock[];
+  text: PortableTextBlock[];
+	template: Template;
 }
