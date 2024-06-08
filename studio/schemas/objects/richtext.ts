@@ -10,9 +10,10 @@ import {defineType, defineArrayMember} from 'sanity'
  *    type: 'blockContent'
  *  }
  */
+
 export default defineType({
-  title: 'Block Content',
-  name: 'blockContent',
+  title: 'Rich Text',
+  name: 'richtext',
   type: 'array',
   of: [
     defineArrayMember({
@@ -41,17 +42,30 @@ export default defineType({
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
+          // Variable
           {
-            title: 'URL',
-            name: 'link',
-            type: 'object',
-            fields: [
-              {
-                title: 'URL',
-                name: 'href',
-                type: 'url',
-              },
-            ],
+            name: 'annotationVariable',
+            type: 'annotationVariable',
+          },
+          // Footnote
+          {
+            name: 'annotationFootnote',
+            type: 'annotationFootnote',
+          },
+          // Email
+          {
+            name: 'annotationLinkEmail',
+            type: 'annotationLinkEmail',
+          },
+          // Internal link
+          {
+            name: 'annotationLinkInternal',
+            type: 'annotationLinkInternal',
+          },
+          // URL
+          {
+            name: 'annotationLinkExternal',
+            type: 'annotationLinkExternal',
           },
         ],
       },

@@ -17,6 +17,7 @@ export default defineConfig({
   projectId,
   dataset,
   plugins: [
+		colorInput(),
     structureTool(),
     presentationTool({
       previewUrl: {
