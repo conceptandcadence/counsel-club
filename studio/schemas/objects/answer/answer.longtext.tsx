@@ -1,16 +1,22 @@
 
-import {BlockContentIcon} from '@sanity/icons'
+import {UnknownIcon} from '@sanity/icons'
 import {defineField} from 'sanity'
 
 export default defineField({
   name: 'answer.longtext',
-  title: 'Long Text',
-  type: 'document',
-  icon: BlockContentIcon,
+  title: 'Input: Long Text',
+  type: 'object',
+  icon: UnknownIcon,
   fields: [
 		defineField({
 			name: 'title',
 			title: 'Label',
+			type: 'string',
+			validation: (Rule) => Rule.required(),
+		}),		
+		defineField({
+			name: 'variable',
+			title: 'Variable Name',
 			type: 'string',
 			validation: (Rule) => Rule.required(),
 		}),		

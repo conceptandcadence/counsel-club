@@ -3,8 +3,8 @@ import {BoltIcon} from '@sanity/icons'
 import {defineField} from 'sanity'
 
 export default defineField({
-  name: 'variable',
-  title: 'Variable',
+  name: 'dataText',
+  title: 'dataText',
   type: 'document',
   icon: BoltIcon,
   fields: [

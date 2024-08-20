@@ -1,45 +1,12 @@
 <template>
-  <a
-    v-if="previewEnabled && !inFrame"
-    :href="`/preview/disable?redirect=${route.fullPath}`"
-    class="preview-toggle"
-  >
-    <span>Preview Enabled</span>
-    <span>Disable Preview</span>
-  </a>
-
-  <div class="container">
-    <header class="header">
-      <a class="header__title" href="/">Nuxt + Sanity</a>
-    </header>
-    <main>
-      <NuxtPage />
-    </main>
-    <footer class="footer">
-      <p class="footer__text">
-        Made with
-        <svg
-          data-sanity-icon="heart-filled"
-          width="1em"
-          height="1em"
-          viewBox="0 0 25 25"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M17 16C15.8 17.3235 12.5 20.5 12.5 20.5C12.5 20.5 9.2 17.3235 8 16C5.2 12.9118 4.5 11.7059 4.5 9.5C4.5 7.29412 6.1 5.5 8.5 5.5C10.5 5.5 11.7 6.82353 12.5 8.14706C13.3 6.82353 14.5 5.5 16.5 5.5C18.9 5.5 20.5 7.29412 20.5 9.5C20.5 11.7059 19.8 12.9118 17 16Z"
-            fill="currentColor"
-            stroke="currentColor"
-            stroke-width="1.2"
-          ></path>
-        </svg>
-        at Sanity
-      </p>
-    </footer>
-  </div>
+	<NuxtPage />
+	<SiteFooter></SiteFooter>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import SiteFooter from '~/components/global/SiteFooter.vue'
+
 const route = useRoute()
 const { enabled: previewEnabled, inFrame } = useSanityVisualEditingState()
 </script>
@@ -57,9 +24,9 @@ const { enabled: previewEnabled, inFrame } = useSanityVisualEditingState()
   --space-8: 136px;
   --space-9: 220px;
 
-  --font-family-sans: Inter;
-  --font-family-serif: PT Serif;
-  --font-family-mono: IBM Plex Mono;
+  --font-family-sans: 'Futura ND';
+  --font-family-serif: 'PT Serif';
+  --font-family-mono: 'IBM Plex Mono';
 
   --font-size-0: 12px;
   --font-size-1: 14px;
@@ -94,12 +61,17 @@ const { enabled: previewEnabled, inFrame } = useSanityVisualEditingState()
   --blue-600: #1e61cd;
   --magenta-100: #f9d7eb;
 
+	--offwhite: '#FFFFF3';
+	--charcoal: '#393631';
+	--darkgreen: '#22392A';
+	--brightgreen: '#28A066';
+
   --max-width-0: 320px;
   --max-width-1: 768px;
 }
 
 html {
-  background-color: var(--white);
+  background-color: var(--offwhite);
   font-family: var(--font-family-sans), var(--font-family-serif), sans-serif;
   text-size-adjust: 100%;
 }
@@ -109,7 +81,7 @@ body {
 }
 </style>
 
-<style scoped>
+<style>
 .container {
   margin: 0 auto;
 }
@@ -121,10 +93,8 @@ main {
 .header {
   display: flex;
   padding: 0 var(--space-1);
-  border-bottom: 1px solid #ced2d9;
-
   z-index: 10;
-  background: var(--white);
+  background: var(--offwhite);
   position: fixed;
   left: 0;
   right: 0;

@@ -4,8 +4,8 @@ import {defineField} from 'sanity'
 
 export default defineField({
   name: 'answer.phone',
-  title: 'Phone',
-  type: 'document',
+  title: 'Input: Phone',
+  type: 'object',
   icon: BlockContentIcon,
   fields: [
 		defineField({
@@ -14,6 +14,12 @@ export default defineField({
 			type: 'string',
 			validation: (Rule) => Rule.required(),
 		}),		
+		defineField({
+			name: 'variable',
+			title: 'Variable Name',
+			type: 'string',
+			validation: (Rule) => Rule.required(),
+		}),	
   ],
   preview: {
     select: {

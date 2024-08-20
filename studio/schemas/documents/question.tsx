@@ -19,25 +19,30 @@ export default defineField({
 			title: 'Text',
 			type: 'richtext',
 		}),
+		
 		defineField({
 			name: 'answers',
 			title: 'Answers',
 			type: 'array',
       of: [
+				{type: 'answer.button'},
         {type: 'answer.text'},
 				{type: 'answer.longtext'},
+				{type: 'answer.select'},
         {type: 'answer.email'},
+				{type: 'answer.entity'},
         {type: 'answer.phone'},
-        {type: 'answer.button'},
 				{type: 'answer.checkbox'},
       ],
 		}),	
+
 		defineField({
 			name: 'education',
 			title: 'Education',
 			type: 'richtext',
 		}),
   ],
+	
   preview: {
     select: {
       active: 'active',

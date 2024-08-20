@@ -14,6 +14,24 @@ console.log(contract.value);
 </script>
 
 <template>
+		<aside class="lg:pl-72 min-h-[100vh]">
+		<div class="xl:pl-96">
+			<div class="px-4 py-10 sm:px-6 lg:px-8 lg:py-6">
+				<!-- Secondary column (hidden on smaller screens) --> 
+				<h2>Data</h2>
+			</div>
+			<div class="px-4 py-10 sm:px-6 lg:px-8 lg:py-6">
+				<!-- Secondary column (hidden on smaller screens) --> 
+				<h3>Template</h3>
+				<ul></ul>
+			</div>
+		</div>
+	</aside>
+
+	<main class="fixed inset-y-0 left-72 hidden w-96 overflow-y-auto border-r border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block">
+		<!-- Main area -->
+		<h2>{{ session.title }}</h2>
+	</main>
   <section v-if="contract" class="post">
     <img
       v-if="contract.mainImage"

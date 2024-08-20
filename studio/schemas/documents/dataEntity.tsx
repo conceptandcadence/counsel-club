@@ -3,8 +3,8 @@ import {BoltIcon} from '@sanity/icons'
 import {defineField} from 'sanity'
 
 export default defineField({
-  name: 'variable',
-  title: 'Variable',
+  name: 'dataEntity',
+  title: 'dataEntity',
   type: 'document',
   icon: BoltIcon,
   fields: [
@@ -18,24 +18,29 @@ export default defineField({
 			title: 'Type',
 			name: 'type',
 			type: 'string',
-			validation: (Rule) => Rule.required(),
 			options: {
 				list: [
-					{title: 'True/Fale', value: 'boolean'},
-					{title: 'Text', value: 'text'},
-					{title: 'Number', value: 'number'},
-					{title: 'Date', value: 'date'},
-					{title: 'Year', value: 'year'},
-					{title: 'Entity', value: 'entity'},
-					{title: 'Property', value: 'property'}
+					{title: 'Individual', value: 'Sole Proprietor'},
+					{title: 'LLC', value: 'LLC'},
+					{title: 'Corporation', value: 'Corporation'}
 				], 
 			}
 		}),
+    defineField({
+      name: 'dba',
+      title: 'DBA Title',
+      type: 'string',
+    }),
 		defineField({
-			title: 'Allow multiple values',
-			name: 'array',
-			type: 'boolean'
-		})
+			name: 'website',
+			title: 'Website',
+			type: 'url',
+		}),
+    defineField({
+      name: 'address',
+      title: 'Address',
+      type: 'address',
+    }),
   ],
   preview: {
     select: {

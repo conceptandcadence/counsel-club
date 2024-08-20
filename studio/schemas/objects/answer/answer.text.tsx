@@ -4,13 +4,19 @@ import {defineField} from 'sanity'
 
 export default defineField({
   name: 'answer.text',
-  title: 'Text',
-  type: 'document',
+  title: 'Input: Text',
+  type: 'object',
   icon: BlockContentIcon,
   fields: [
 		defineField({
 			name: 'title',
 			title: 'Label',
+			type: 'string',
+			validation: (Rule) => Rule.required(),
+		}),		
+		defineField({
+			name: 'variable',
+			title: 'Variable Name',
 			type: 'string',
 			validation: (Rule) => Rule.required(),
 		}),		

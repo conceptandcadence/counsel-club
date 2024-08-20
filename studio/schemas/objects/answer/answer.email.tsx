@@ -1,12 +1,12 @@
 
-import {BlockContentIcon} from '@sanity/icons'
+import {UnknownIcon} from '@sanity/icons'
 import {defineField} from 'sanity'
 
 export default defineField({
   name: 'answer.email',
-  title: 'Email',
-  type: 'document',
-  icon: BlockContentIcon,
+  title: 'Input: Email',
+  type: 'object',
+  icon: UnknownIcon,
   fields: [
 		defineField({
 			name: 'title',
@@ -14,6 +14,12 @@ export default defineField({
 			type: 'string',
 			validation: (Rule) => Rule.required(),
 		}),		
+		defineField({
+			name: 'variable',
+			title: 'Variable Name',
+			type: 'string',
+			validation: (Rule) => Rule.required(),
+		}),	
   ],
   preview: {
     select: {

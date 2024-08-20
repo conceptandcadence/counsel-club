@@ -1,18 +1,28 @@
 
-import {BlockContentIcon} from '@sanity/icons'
+import {UnknownIcon} from '@sanity/icons'
 import {defineField} from 'sanity'
 
 export default defineField({
   name: 'answer.button',
-  title: 'Option',
+  title: 'Button',
   type: 'document',
-  icon: BlockContentIcon,
+  icon: UnknownIcon,
   fields: [
 		defineField({
 			name: 'title',
 			title: 'Label',
 			type: 'string',
 			validation: (Rule) => Rule.required(),
+		}),		
+		defineField({
+			name: 'actions',
+			title: 'Actions',
+			type: 'array',
+      of: [
+        {type: 'action.navigate'},
+				{type: 'action.url'},
+				{type: 'action.variable'},
+      ],
 		}),	
   ],
   preview: {
