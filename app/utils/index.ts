@@ -47,7 +47,7 @@ export async function getStage(id) {
 
 export async function createProfile(profile:Profile) {
   const result = client.create(profile).then(result => {
-		alert('Your profile has been created!')
+		alert('Your profile has been saved!')
 	})
   return result
 }
