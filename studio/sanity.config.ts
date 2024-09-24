@@ -12,8 +12,8 @@ export const dataset = process.env.SANITY_STUDIO_DATASET!
 import "./custom.css";
 
 export default defineConfig({
-  name: 'project-name',
-  title: 'Project Name',
+  name: 'counsel-club',
+  title: 'Counsel Club',
   projectId,
   dataset,
   plugins: [

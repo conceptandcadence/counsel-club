@@ -1,11 +1,11 @@
 <template>
 	<NuxtPage />
-	<SiteFooter></SiteFooter>
+	
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import SiteFooter from '~/components/global/SiteFooter.vue'
+
 
 const route = useRoute()
 const { enabled: previewEnabled, inFrame } = useSanityVisualEditingState()

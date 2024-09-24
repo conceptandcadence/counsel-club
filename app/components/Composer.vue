@@ -1,7 +1,4 @@
 <script>
-import { defineEmits } from 'vue'
-
-
 import FlowCard from '~/components/FlowCard.vue'
 import Question from '~/components/Question.vue'
 
@@ -21,8 +18,6 @@ import {
 	MenuItems
 } from '@headlessui/vue'
 
-
-let session = {};
 session.template = session.template ? session.template : {}
 session.variables = []
 session.data = []
@@ -152,7 +147,7 @@ export default {
 		</nav>
 
 		<div v-if="flow" class="stage-container w-full flex justify-center">
-			<Question :stage="flow.start" @answer-button-click="callback" />
+			<Question :stage="flow.start" />
 		</div>
 
 		<div v-else class="flows w-full flex justify-center">

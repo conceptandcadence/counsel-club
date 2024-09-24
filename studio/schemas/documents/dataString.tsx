@@ -27,7 +27,8 @@ export default defineField({
 					{title: 'Date', value: 'date'},
 					{title: 'Year', value: 'year'},
 					{title: 'Entity', value: 'entity'},
-					{title: 'Property', value: 'property'}
+					{title: 'Profile', value: 'profile'},
+					{title: 'Option', value: 'option'}
 				], 
 			}
 		}),

@@ -28,6 +28,7 @@ module.exports = {
 			offwhite: '#FFFFF3',
 			charcoal: '#393631',
 			darkgreen: '#22392A',
+			mediumgreen: '#10592A',
 			brightgreen: '#28A066',
 			darkblue: '#152C48',
 			pink: '#EED3F2'
@@ -102,7 +103,7 @@ module.exports = {
       ],
       // 36px
       '2xl': [
-        '2.5rem',
+        '2rem',
         {
           letterSpacing: '-0.0175em',
           lineHeight: '1.15',
@@ -110,7 +111,7 @@ module.exports = {
       ],
       // 54px
       '3xl': [
-        '3.375rem',
+        '2.25rem',
         {
           letterSpacing: '-0.03em',
           lineHeight: '1.2',
@@ -118,7 +119,7 @@ module.exports = {
       ],
       // 74px
       '4xl': [
-        '4.625rem',
+        '2.5rem',
         {
           letterSpacing: '-0.03em',
           lineHeight: '1',
@@ -126,7 +127,7 @@ module.exports = {
       ],
       // 110px
       '5xl': [
-        '6.875rem',
+        '3rem',
         {
           letterSpacing: '-0.03em',
           lineHeight: '1',

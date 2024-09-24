@@ -15,11 +15,15 @@ export default defineField({
       validation: (Rule) => Rule.required(),
     }),
 		defineField({
+			name: 'heading',
+			title: 'Heading',
+			type: 'string',
+		}),
+		defineField({
 			name: 'label',
-			title: 'Text',
+			title: 'Description',
 			type: 'richtext',
 		}),
-		
 		defineField({
 			name: 'answers',
 			title: 'Answers',
@@ -31,11 +35,11 @@ export default defineField({
 				{type: 'answer.select'},
         {type: 'answer.email'},
 				{type: 'answer.entity'},
+				{type: 'answer.profile'},
         {type: 'answer.phone'},
 				{type: 'answer.checkbox'},
       ],
 		}),	
-
 		defineField({
 			name: 'education',
 			title: 'Education',

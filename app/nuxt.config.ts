@@ -2,6 +2,8 @@
 export default defineNuxtConfig({
   modules: [
 		'@nuxtjs/sanity', 
+		'@formkit/nuxt',
+		'@pinia/nuxt',
 		//"@nuxt/ui",
 	],
   sanity: {

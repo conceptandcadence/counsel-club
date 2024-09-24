@@ -4,12 +4,12 @@ import { PortableText } from '@portabletext/vue'
 
 const route = useRoute()
 
-const query = groq`{'flow':*[ _type == "flow" && slug.current == $slug][0]{...,start->}, 'templates': *[_type == 'template'], 'variables': *[_type == 'variable'], 'dataEntities': *[_type == 'dataEntity'], 'flows': *[_type == 'flow'], 'settings': *[_type == 'settings'][0],}`
+const query = groq`{'flow':*[ _type == "flow" && slug.current == $slug][0]{...,start->}, 'templates': *[_type == 'template'], 'variables': *[_type == 'variable'], 'profiles': *[_type == 'profile'], 'flows': *[_type == 'flow'], 'settings': *[_type == 'settings'][0],}`
 const { data: queryResult } = await useSanityQuery<Flow>(query, {
   slug: route.params.slug,
 })
+console.log('queryResult')
 console.log(queryResult)
-
 </script>
 
 <style>

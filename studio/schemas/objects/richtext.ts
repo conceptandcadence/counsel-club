@@ -51,10 +51,10 @@ export default defineType({
             name: 'annotationVariable',
             type: 'annotationVariable',
           },
-          // Footnote
+          // Gloss
           {
-            name: 'annotationFootnote',
-            type: 'annotationFootnote',
+            name: 'annotationGloss',
+            type: 'annotationGloss',
           },
           // Email
           {

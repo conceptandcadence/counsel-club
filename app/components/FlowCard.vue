@@ -1,7 +1,32 @@
 <script>
 import { PortableText } from '@portabletext/vue'
-import { MenuButton } from '@headlessui/vue'
+
+const myPortableTextComponents = {
+	/*
+  types: {
+    image: ({ value }) => h('img', { src: value.imageUrl }),
+    callToAction: ({ value, isInline }, { slots }) =>
+      isInline
+        ? h('a', { href: value.url }, value.text)
+        : h('div', { class: 'callToAction' }, value.text),
+  },
+
+  marks: {
+    link: ({ value }, { slots }) => {
+      const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined;
+      return h('a', { href: value.href, rel }, slots.default?.());
+    },
+  },
+	*/
+};
+import LOCALE from '~/locales/en.json'
+
 export default {
+	data() {
+    return {
+      LOCALE: LOCALE,
+    };
+  },
   props: {
     flow: {
       type: Object,
@@ -10,36 +35,33 @@ export default {
   },
 	methods: {
     selectFlow: function (flow) {
-      session.data.flow = flow
+			this.$emit('selectFlow', flow);
+			//console.log(flow)
     }
 	},
-	emits: ['select-flow'],
+	
+	emits: ['selectFlow'],
   setup(props, ctx) {
-    ctx.emit('select-flow')
+    //ctx.emit('selectFlow')
   }
 }
-
-/*
-		<MenuButton @click="$emit('select-flow',flow)" class="inline-flex w-full flex-col text-center rounded-md bg-black/0 px-3 py-2 text-xs font-semibold border border-black cursor-pointer hover:bg-black/10 text-black shadow-sm transition-all duration-300">
-			<span class="block">Select</span>
-		</MenuButton>
-*/
 </script>
 
 <template>
-  <div class="flow w-1/3 px-12 flex-col" v-if="flow">
+  <div class="flow w-1/3 px-12 flex-col justify-center items-center flex" v-if="flow">
     <img
       v-if="flow.thumb"
-      class="flow-thumb transition-all duration-1000"
+      class="flow-thumb transition-all duration-1000 w-2/3"
       :src="$urlFor(flow.thumb).width(1600).url()"
       alt="flow.title"
     />
 		<h2 class="title text-center pt-12 pb-6 text-lg font-headline">{{ flow.title }}</h2>
-		<PortableText :value="flow.label" />
-		<a class="button button-secondary flex justify-center items-center py-4 px-6 w-full" :href="`/flows/${flow.slug.current}`">
-			<span class="text-h6 uppercase">Get Started</span>		
-		</a>
+		<div class="text-center text-xs mb-7">
+			<SanityContent :blocks="flow.label" />
+		</div>
+		<a :href="'/create/' + flow.slug.current" class="flex w-full button-secondary group h-[40px] relative text-h6 uppercase font-sans justify-center items-center button py-2 px-4 rounded-[64px] transition-all duration-300 ease-in-out bg-offwhite md:py-2 md:px-3 background-offwhite border border-darkgreen after:content-[''] after:absolute after:border after:border-brightgreen after:rounded-[64px] after:-top-[3px] after:-bottom-[3px] after:-left-[3px] after:-right-[3px] after:transition-all after:duration-300 after:ease-in-out after:pointer-none hover:bg-darkgreen hover:text-offwhite">Get Started</a>
 	</div>
+
 </template>
 
 <style scoped>

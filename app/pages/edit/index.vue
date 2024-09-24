@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Composer from '~/components/Composer.vue'
 
-const query = groq`{'templates': *[_type == 'template'], 'variables': *[_type == 'variable'], 'dataEntities': *[_type == 'dataEntity'], 'flows': *[_type == 'flow']}`
+const query = groq`{'templates': *[_type == 'template'], 'variables': *[_type == 'variable'], 'profiles': *[_type == 'profile'], 'flows': *[_type == 'flow']}`
 const { data: queryResult } = await useSanityQuery(query)
 </script>
 

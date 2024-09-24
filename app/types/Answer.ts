@@ -1,4 +1,4 @@
-export type Answer = AnswerText | AnswerSelect | AnswerPhone | AnswerLongText | AnswerEntity | AnswerEmail | AnswerCheckbox | AnswerButton;
+export type Answer = AnswerText | AnswerSelect | AnswerPhone | AnswerLongText | AnswerEntity | AnswerEmail | AnswerCheckbox | AnswerButton | AnswerProfile;
 
 export interface AnswerText { 
   _id: string;
@@ -52,6 +52,13 @@ export interface AnswerCheckbox {
 export interface AnswerButton { 
   _id: string;
   _type: "answer.button";
+  _createdAt: string;
+  title?: string;
+	variable: string;
+}
+export interface AnswerProfile { 
+  _id: string;
+  _type: "answer.profile";
   _createdAt: string;
   title?: string;
 	variable: string;

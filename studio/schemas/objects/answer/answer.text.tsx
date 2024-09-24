@@ -16,11 +16,20 @@ export default defineField({
 		}),		
 		defineField({
 			name: 'variable',
-			title: 'Variable Name',
-			type: 'string',
+			title: 'Variable',
+			type: 'reference',
+			to: [{type: 'variable'}],
 			validation: (Rule) => Rule.required(),
-		}),		
+		}),
+		defineField({
+			title: 'Half width',
+			name: 'short',
+			type: 'boolean'
+		})
   ],
+	initialValue: {
+    short: false
+  },
   preview: {
     select: {
       active: 'active',

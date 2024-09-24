@@ -6,6 +6,7 @@ export interface InputText {
   _createdAt: string;
   title?: string;
 	variable: string;
+	half: boolean;
 }
 export interface InputSelect { 
   _id: string;
@@ -13,6 +14,7 @@ export interface InputSelect {
   _createdAt: string;
   title?: string;
 	variable: string;
+	half: boolean;
 }
 export interface InputPhone { 
   _id: string;
@@ -20,6 +22,7 @@ export interface InputPhone {
   _createdAt: string;
   title?: string;
 	variable: string;
+	half: boolean;
 }
 export interface InputLongText { 
   _id: string;
@@ -27,6 +30,7 @@ export interface InputLongText {
   _createdAt: string;
   title?: string;
 	variable: string;
+	half: boolean;
 }
 export interface InputEntity { 
   _id: string;
@@ -41,6 +45,7 @@ export interface InputEmail {
   _createdAt: string;
   title?: string;
 	variable: string;
+	half: boolean;
 }
 export interface InputCheckbox { 
   _id: string;
@@ -48,6 +53,7 @@ export interface InputCheckbox {
   _createdAt: string;
   title?: string;
 	variable: string;
+	half: boolean;
 }
 export interface InputButton { 
   _id: string;

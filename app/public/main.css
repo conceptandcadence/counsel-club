@@ -137,13 +137,18 @@ mark.variable:hover svg {
 	outline: none;
 }
 
-[type='text']:not(:placeholder-shown) + label, .input-wrapper.floating-input input:where(:not([type])):not(:placeholder-shown) + label, .input-wrapper.floating-input [type='email']:not(:placeholder-shown) + label, .input-wrapper.floating-input [type='url']:not(:placeholder-shown) + label, .input-wrapper.floating-input [type='password']:not(:placeholder-shown) + label, .input-wrapper.floating-input [type='number']:not(:placeholder-shown) + label, .input-wrapper.floating-input [type='date']:not(:placeholder-shown) + label, .input-wrapper.floating-input [type='datetime-local']:not(:placeholder-shown) + label, .input-wrapper.floating-input [type='month']:not(:placeholder-shown) + label, .input-wrapper.floating-input [type='search']:not(:placeholder-shown) + label, .input-wrapper.floating-input [type='tel']:not(:placeholder-shown) + label, .input-wrapper.floating-input [type='time']:not(:placeholder-shown) + label, .input-wrapper.floating-input [type='week']:not(:placeholder-shown) + label, .input-wrapper.floating-input [multiple]:not(:placeholder-shown) + label, .input-wrapper.floating-input textarea:not(:placeholder-shown) + label, .input-wrapper.floating-input select {
+[type='text']:not(:placeholder-shown) + label, .input-wrapper.input-floating input:where(:not([type])):not(:placeholder-shown) + label, .input-wrapper.input-floating [type='email']:not(:placeholder-shown) + label, .input-wrapper.input-floating [type='url']:not(:placeholder-shown) + label, .input-wrapper.input-floating [type='password']:not(:placeholder-shown) + label, .input-wrapper.input-floating [type='number']:not(:placeholder-shown) + label, .input-wrapper.input-floating [type='date']:not(:placeholder-shown) + label, .input-wrapper.input-floating [type='datetime-local']:not(:placeholder-shown) + label, .input-wrapper.input-floating [type='month']:not(:placeholder-shown) + label, .input-wrapper.input-floating [type='search']:not(:placeholder-shown) + label, .input-wrapper.input-floating [type='tel']:not(:placeholder-shown) + label, .input-wrapper.input-floating [type='time']:not(:placeholder-shown) + label, .input-wrapper.input-floating [type='week']:not(:placeholder-shown) + label, .input-wrapper.input-floating [multiple]:not(:placeholder-shown) + label, .input-wrapper.input-floating textarea:not(:placeholder-shown) + label {
 	transform: translate(-16px,-42px);
 	font-size: 8px;
 }
 
 [type='text']:focus:placeholder-shown + label, input:where(:focus[type]):focus:placeholder-shown + label, [type='email']:focus:placeholder-shown + label, [type='url']:focus:placeholder-shown + label, [type='password']:focus:placeholder-shown + label, [type='number']:focus:placeholder-shown + label, [type='date']:focus:placeholder-shown + label, [type='datetime-local']:focus:placeholder-shown + label, [type='month']:focus:placeholder-shown + label, [type='search']:focus:placeholder-shown + label, [type='tel']:focus:placeholder-shown + label, [type='time']:focus:placeholder-shown + label, [type='week']:focus:placeholder-shown + label, [multiple]:focus:placeholder-shown + label, textarea:focus:placeholder-shown + label, select {
 	--tw-translate-x: 6px;
+}
+
+.input-wrapper.input-floating select {
+	font-size: 14px;
+	font-style: italic;
 }
 
 .navigation-secondary:after {
@@ -157,3 +162,42 @@ mark.variable:hover svg {
 	background: linear-gradient(90deg, rgba(255,255,243,0) 0%, rgba(255,255,243,1) 95%);
 	pointer-events: none;
 }
+
+.formkit-wrapper button {
+	display: flex;
+}
+
+.contract-frame p {
+	margin-bottom: 0.875rem;
+	line-height: 1.4;
+}
+
+.contract-frame h2 {
+	font-size: 2rem;
+	font-family: "EditorialNew", ui-serif;
+	text-align: center;
+	margin-top: 2rem;
+	margin-bottom: 3rem;
+}
+
+.contract-frame h3 {
+	font-size: 1.5rem;
+	font-family: 'Futura ND';
+	text-align: left;
+	margin-bottom: 1rem;
+}
+
+.contract-frame h4 {
+	font-size: 1rem;
+	font-family: 'Futura ND';
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+.contract-frame h5 {
+	font-size: 2rem;
+	font-family: 'Futura ND';
+	text-align: center;
+	margin-bottom: 1rem;
+}
+

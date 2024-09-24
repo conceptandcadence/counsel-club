@@ -7,5 +7,6 @@ export interface Question {
   title?: string;
 	label: PortableTextBlock[];
   answers: Object[];
+	heading: string;
 	education: PortableTextBlock[];
 }

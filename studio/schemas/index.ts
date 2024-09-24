@@ -2,14 +2,14 @@
 import annotationLinkEmail from './annotations/linkEmail'
 import annotationLinkExternal from './annotations/linkExternal'
 import annotationLinkInternal from './annotations/linkInternal'
-import annotationFootnote from './annotations/footnote'
+import annotationGloss from './annotations/glossary'
 import annotationVariable from './annotations/variable'
 
 const annotations = [
   annotationLinkEmail,
   annotationLinkExternal,
   annotationLinkInternal,
-  annotationFootnote,
+  annotationGloss,
 	annotationVariable,
 ]
 
@@ -18,7 +18,7 @@ import styleTheme from './documents/styleTheme'
 import contract from './documents/contract'
 import colorTheme from './documents/colorTheme'
 
-import dataEntity from './documents/dataEntity'
+import profile from './documents/profile'
 import dataText from './documents/dataText'
 
 import flow from './documents/flow'
@@ -34,7 +34,7 @@ const documents = [
 	styleTheme, 
 	colorTheme,
 	contract, 
-	dataEntity,
+	profile,
 	dataText,
 	flow,
 	page, 
@@ -62,6 +62,8 @@ import actionUrl from './objects/action/action.url'
 import answerText from './objects/answer/answer.text'
 import answerEmail from './objects/answer/answer.email'
 import answerEntity from './objects/answer/answer.entity'
+import answerProfile from './objects/answer/answer.profile'
+
 
 import answerPhone from './objects/answer/answer.phone'
 import answerButton from './objects/answer/answer.button'
@@ -95,6 +97,7 @@ const objects = [
 	answerCheckbox, 
 	answerLongText, 
 	answerSelect, 
+	answerProfile,
 	footer,
 	links,
 	linkExternal,

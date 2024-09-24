@@ -1,12 +1,12 @@
 
-import {UnknownIcon} from '@sanity/icons'
+import {LeaveIcon} from '@sanity/icons'
 import {defineField} from 'sanity'
 
 export default defineField({
   name: 'answer.button',
   title: 'Button',
   type: 'document',
-  icon: UnknownIcon,
+  icon: LeaveIcon,
   fields: [
 		defineField({
 			name: 'title',
@@ -24,6 +24,11 @@ export default defineField({
 				{type: 'action.variable'},
       ],
 		}),	
+		defineField({
+			title: 'Half width',
+			name: 'short',
+			type: 'boolean'
+		})
   ],
   preview: {
     select: {

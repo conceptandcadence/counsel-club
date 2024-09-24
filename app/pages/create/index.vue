@@ -1,9 +1,16 @@
 <script setup lang="ts">
-//import Composer from '~/components/Composer.vue'
-//
-
-const query = groq`{'templates': *[_type == 'template'], 'variables': *[_type == 'variable'], 'dataEntities': *[_type == 'dataEntity'], 'flows': *[_type == 'flow'], 'settings': *[_type == 'settings'][0],}`
+const query = groq`{'templates': *[_type == 'template'], 'variables': *[_type == 'variable'], 'profiles': *[_type == 'profile'], 'flows': *[_type == 'flow']{..., start->{...}}, 'settings': *[_type == 'settings'][0],}`
 const { data: queryResult } = await useSanityQuery(query)
+
+import User from '@/store/models/User';
+import { useRepo } from 'pinia-orm';
+import { useNuxtApp } from '#imports';
+
+const nuxtApp = useNuxtApp(); // workaround
+const userRepo = useRepo(User, nuxtApp.$pinia); // workaround
+// const userRepo = useRepo(User);
+const users = userRepo.all();
+
 </script>
 
 <style>
@@ -36,5 +43,5 @@ const { data: queryResult } = await useSanityQuery(query)
 </style>
 
 <template>
-
+	<ContractFlows :flow="queryResult?.flow" :templates="queryResult.templates" :variables="queryResult.variables" :dataEntities="queryResult.dataEntities" :flows="queryResult.flows" :settings="queryResult.settings" />
 </template>

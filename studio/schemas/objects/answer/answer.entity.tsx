@@ -1,12 +1,12 @@
 
-import {UnknownIcon} from '@sanity/icons'
+import {UserIcon} from '@sanity/icons'
 import {defineField} from 'sanity'
 
 export default defineField({
   name: 'answer.entity',
   title: 'Input: Business Entity',
   type: 'object',
-  icon: UnknownIcon,
+  icon: UserIcon,
   fields: [
 		defineField({
 			name: 'title',

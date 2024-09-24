@@ -1,12 +1,12 @@
 
-import {UnknownIcon} from '@sanity/icons'
+import {EnvelopeIcon} from '@sanity/icons'
 import {defineField} from 'sanity'
 
 export default defineField({
   name: 'answer.email',
   title: 'Input: Email',
   type: 'object',
-  icon: UnknownIcon,
+  icon: EnvelopeIcon,
   fields: [
 		defineField({
 			name: 'title',
@@ -16,10 +16,16 @@ export default defineField({
 		}),		
 		defineField({
 			name: 'variable',
-			title: 'Variable Name',
-			type: 'string',
+			title: 'Variable',
+			type: 'reference',
+			to: [{type: 'variable'}],
 			validation: (Rule) => Rule.required(),
-		}),	
+		}),
+		defineField({
+			title: 'Half width',
+			name: 'short',
+			type: 'boolean'
+		})
   ],
   preview: {
     select: {

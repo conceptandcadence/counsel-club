@@ -30,7 +30,7 @@ console.log(contract.value);
 
 	<main class="fixed inset-y-0 left-72 hidden w-96 overflow-y-auto border-r border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block">
 		<!-- Main area -->
-		<h2>{{ session.title }}</h2>
+		<h2>TITLE</h2>
 	</main>
   <section v-if="contract" class="post">
     <img
