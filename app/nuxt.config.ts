@@ -26,4 +26,9 @@ export default defineNuxtConfig({
       'postcss-nested': {},
     },
   },
+	routeRules: {
+    "/": {
+      redirect: "/create/",
+    },
+  },
 })
